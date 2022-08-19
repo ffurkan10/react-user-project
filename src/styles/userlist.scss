@@ -1,0 +1,31 @@
+//
+.user__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-block: 50px;
+  &__ul {
+    &__item {
+      list-style-type: none;
+    }
+  }
+  &__click {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 550px;
+    height: 50px;
+    background-color: rgb(1, 180, 228);
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin-top: 50px;
+    &:hover {
+      background-color: rgba(1, 179, 228, 0.637);
+      transition: all 0.2s ease-out;
+    }
+  }
+}
