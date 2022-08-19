@@ -5,6 +5,7 @@ import User from "../user/User";
 const UserList = () => {
   const [users, setUsers] = useState([]);
   const [click, setClick] = useState(5);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -17,7 +18,11 @@ const UserList = () => {
   }, [click]);
 
   const handleClick = () => {
-    setClick((prew) => prew + 5);
+    setLoading(true);
+    setTimeout(() => {
+      setClick((prew) => prew + 5);
+      setLoading(false);
+    }, 1000);
   };
 
   return (
@@ -26,7 +31,8 @@ const UserList = () => {
         <User users={users} setUsers={setUsers} />
       </ul>
       <button className="user__list__click" onClick={handleClick}>
-        More Users
+        {" "}
+        {loading ? "Loading..." : "More Users"}
       </button>
     </div>
   );
